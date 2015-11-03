@@ -1,0 +1,30 @@
+{
+  "name": "readdit comment compactor",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "reddit comment threads - compacted for your skimming pleasure",
+  "homepage_url": "http://github.com/jufa/readit",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "comments compacted!"
+  },
+  "permissions": [
+   "tabs", "https://www.reddit.com/r/*"
+  ],
+  "content_scripts": [
+  {
+    "matches": ["https://www.reddit.com/r/*"],
+    "js": ["./js/lib/jquery.min.js", "./js/readit.js"],
+    "run_at": "document_end"
+  }
+],
+  "permissions": [
+    "http://reddit.com/*"
+  ]
+}
